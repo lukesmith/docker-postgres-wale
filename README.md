@@ -9,3 +9,13 @@ Environment variables to pass to the container for WAL-E, all of these must be p
 `AWS_SECRET_ACCESS_KEY`
 
 `WALE_S3_PREFIX=\"s3://<bucketname>/<path>\"`
+
+```
+docker run -it \
+  --env "WALE_AWS_ACCESS_KEY_ID=****" \
+  --env "WALE_AWS_SECRET_ACCESS_KEY=****" \
+  --env "WALE_AWS_REGION=eu-west-1" \
+  --env "WALE_S3_PREFIX=s3://my-bucket" \
+  -v ./data:/var/lib/postgresql/data \
+  docker-postgres-wale
+```
